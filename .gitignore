@@ -20,8 +20,8 @@ test/Main.js
 test/supports.html
 coverage/
 
-build/*
-dist/*
+# build/*
+# dist/*
 
 examples/scratch.js
 examples/scratch.ts
