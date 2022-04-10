@@ -141,6 +141,14 @@ export class UserMedia extends ToneAudioNode<UserMediaOptions> {
 		}
 		return this;
 	}
+	
+	useStream(stream: MediaStream): this {
+		this._stream = stream;
+		const mediastreamNode = this.context.createMediaStreamSource(stream);
+		connect(mediastreamNode, this.output);
+		this._mediaStream = mediastreamNode;
+		return this;
+	}
 
 	/**
 	 * Close the media stream
